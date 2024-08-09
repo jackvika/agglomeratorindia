@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agglomerator A Series</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+    <!-- W3.CSS -->
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Tab with Logo, Email, and Phone -->
+    <header class="header-tab d-flex justify-content-between align-items-center py-2 px-4">
+        <div class="logo-container">
+            <img src="img/Agglomerator-India-Logo-1.png" alt="Aglomerator India Logo" class="logo">
+        </div>
+        <div class="contact-container d-flex align-items-center">
+            <a href="mailto:info@agglomeratorindia.com" class="contact-link mx-3">
+                <i class="fa fa-envelope"></i> info@agglomeratorindia.com
+            </a>
+            <a href="tel:+911234567890" class="contact-link mx-3">
+                <i class="fa fa-phone"></i> +91 7046463391
+            </a>
+        </div>
+    </header>
+    
+    <!-- Navbar at the bottom -->
+    <nav class="navbar navbar-expand-lg navbar-dark bottom-navbar">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#product-range">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="agglomerator-overview">
+        <div class="container">
+            <div class="agglomerator-content">
+                <div class="agglomerator-gallery">
+                    <div class="agglomerator-main-image">
+                        <img id="main-image" src="img/Agglomerator-machine-manufacturers-in-Ahmedabad.jpg" alt="Agglomerator A Series">
+                    </div>
+                    <div class="agglomerator-thumbnails">
+                        <img class="thumbnail" src="img/Agglomerator-machine-manufacturers-in-Ahmedabad.jpg" alt="Agglomerator A Series - Thumbnail 1" data-large-src="img/Agglomerator-machine-manufacturers-in-Ahmedabad.jpg">
+                        <img class="thumbnail" src="img/Agglomerator-40A.jpg" alt="Agglomerator A Series - Thumbnail 2" data-large-src="img/Agglomerator-40A.jpg">
+                        <img class="thumbnail" src="img/Agglomerator-200A.jpg" alt="Agglomerator A Series - Thumbnail 3" data-large-src="img/Agglomerator-200A.jpg">
+                    </div>
+                </div>
+                <div id="technical-data" class="content">
+                    <div class="content-box technical-data-details">
+                        <h4 class="title text-center center-btm-line mb-4">Technical Data</h4>
+                        <div class="model-selector">
+                            <label for="model-select">Select Model:</label>
+                            <select id="model-select">
+                                <option value="PPM-40A">PPM-40A</option>
+                                <option value="PPM-50A">PPM-50A</option>
+                                <option value="PPM-75A">PPM-75A</option>
+                                <option value="PPM-100A">PPM-100A</option>
+                                <option value="PPM-200A">PPM-200A</option>
+                                <option value="PPM-300A">PPM-300A</option>
+                                <option value="PPM-400A">PPM-400A</option>
+                                <option value="PPM-500A">PPM-500A</option>
+                            </select>
+                        </div>
+                        <div class="content-table table-responsive">
+                            <table class="rwd-table">
+                                <tr>
+                                    <th>MODEL</th>
+                                    <th id="selected-model">PPM-40A</th>
+                                </tr>
+                                <tr>
+                                    <td>Main Motor (HP)</td>
+                                    <td id="main-motor">10</td>
+                                </tr>
+                                <tr>
+                                    <td>Batch Capacity (KG)</td>
+                                    <td id="batch-capacity">4</td>
+                                </tr>
+                                <tr>
+                                    <td>Production (Kg./Hr.)</td>
+                                    <td id="production">15-40</td>
+                                </tr>
+                                <tr>
+                                    <td>Application</td>
+                                    <td id="application">LD/HM, PP Film</td>
+                                </tr>
+                                <tr>
+                                    <td>LD/HM</td>
+                                    <td id="ldhm"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>PP (Film / Tape)</td>
+                                    <td id="pp-film"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>PP/HDPE/PVC</td>
+                                    <td id="pp-hdpe"><i class="fa fa-times"></i></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="agglomerator-actions">
+                        <a href="contact.html" class="btn agglomerator-quote">Request a Quote</a>
+                        <a href="brochure.pdf" class="btn agglomerator-brochure" download>Download Brochure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <section id="agglomerator-overview-section">
+        <div id="agglomerator-visual-frame" class="visual-frame">
+            <div id="machine-visual-display" class="w3-card-4">
+                <img src="img/Agglomerator-machine-manufacturers-in-Ahmedabad.jpg" alt="Agglomerator A Series">
+                <div class="icon-overlay" style="top: 55%; left: 38%;" data-part="motor-assembly">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="icon-overlay" style="top: 45%; left: 70%;" data-part="blade-assembly">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="icon-overlay" style="top: 65%; left: 70%;" data-part="interface-assembly">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div id="assembly-info-details" class="info-details">
+                <div id="default-info" class="info-card">
+                    <h3>Agglomerator Machine Overview</h3>
+                    <p>The agglomerator machine is suitable for various recycling processes and is used for the recycling of plastic films like LDPE, HDPE, PP, PP raffia, woven sacks, FIBC bags, industrial scrap plastic, and plastic fibres. This machine recycles all types of plastics and turns them into plastic popcorn, thus reducing waste and conserving natural resources. It is suitable for recycling the big FIBC bags and various kinds of industrial plastic scraps, which makes it a crucial tool for the recycling industry. When using our agglomerator machine, businesses will be in a position to improve their recycling processes, minimize their effects on the environment, and at the same time come up with affordable solutions to waste management.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Pop-up Modal for Assembly Details -->
+        <div id="popup-modal" class="popup-modal">
+            <div class="popup-content">
+                <span class="popup-close">&times;</span>
+                <div class="popup-detail">
+                    <!-- Content will be dynamically injected here -->
+                </div>
+            </div>
+        </div>
+    
+        <!-- Hidden sections for modal display -->
+        <div id="hidden-info" style="display: none;">
+            <div id="motor-assembly-info" class="assembly-detail info-card" data-part="motor-assembly">
+                <h3>Motor Assembly</h3>
+                <p>The motor is engineered for optimal efficiency and durability, essential for heavy-duty recycling applications.</p>
+            </div>
+            <div id="blade-assembly-info" class="assembly-detail info-card" data-part="blade-assembly">
+                <h3>Blade Assembly</h3>
+                <p>Manufactured from premium-grade steel, these blades ensure precise cutting and long-lasting performance.</p>
+            </div>
+            <div id="interface-assembly-info" class="assembly-detail info-card" data-part="interface-assembly">
+                <h3>Control Interface</h3>
+                <p>The control interface offers advanced settings and user-friendly controls for enhanced process optimization.</p>
+            </div>
+        </div>
+    </section>    
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Left Side -->
+                <div class="footer-section footer-left">
+                    <h2>Need Help?</h2>
+                    <p>We assist you in selecting the perfect machine for your industry or startup.</p>
+                    <p><strong>Quick Enquiry:</strong> Call us at <a href="tel:+917046463391" class="call-button"><strong>+91 7046463391</strong></a></p>
+                </div>
+                <!-- Center -->
+                <div class="footer-section footer-center">
+                    <h2>Recent Blog Posts</h2>
+                    <ul>
+                        <li><a href="#" class="blog-link">Innovations in Plastic Recycling</a></li>
+                        <li><a href="#" class="blog-link">How Agglomerators Boost Efficiency</a></li>
+                        <li><a href="#" class="blog-link">Types of Plastic Waste Explained</a></li>
+                        <li><a href="#" class="blog-link">Top 5 Plastic Processing Machines</a></li>
+                    </ul>
+                </div>
+                <!-- Right Side -->
+                <div class="footer-section footer-right">
+                    <h2>Our Location</h2>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.5158439545117!2d72.7809477!3d20.1555102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be72bea9c113fb5%3A0x7e9c0b3905f104f2!2sPanchal%20Plastic%20Machinery%20P.%20Ltd.!5e0!3m2!1sen!2sin!4v1636777071643!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="250" 
+                                style="border:0; border-radius: 12px;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:example@example.com" target="_blank" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/917046463391" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <p>&copy; 2024 Agglomerator India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="script_pro.js"></script>
+</body>
+</body>
+</html>
