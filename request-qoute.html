@@ -102,6 +102,52 @@
     <script src="https://cdn.emailjs.com/dist/email-js-sdk-v3.5.1.min.js"></script>
     <script>
         emailjs.init('wQSMY4GSDbOcHXUXM'); // Replace with your EmailJS user ID
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("quoteModal");
+            const closeButton = document.getElementsByClassName("close")[0];
+            const form = document.getElementById('quote-form');
+
+            // Show the modal automatically after the page loads
+            modal.style.display = "block";
+
+            // Close the modal when the 'x' button is clicked
+            closeButton.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Close the modal if the user clicks outside the modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Handle form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                console.log('Sending data:', data); // Debugging: Check data being sent
+
+                emailjs.send('service_0519que', 'template_xaev3xd', data) // Replace with actual service and template IDs
+                    .then(function(response) {
+                        console.log('Success:', response); // Debugging: Check success response
+                        alert('Your quote request has been submitted successfully!');
+                        form.reset();
+                        modal.style.display = "none";
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error); // Debugging: Check error response
+                        alert('There was an error submitting your request. Please try again.');
+                    });
+            });
+        });
     </script>
 </head>
 <body>
@@ -150,43 +196,6 @@
             </form>
         </div>
     </div>
-    
-<script>
-  window.emailjs.onload = function() {
-    // Your code that uses emailjs goes here
-    document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById("quoteModal");
-      const closeButton = document.getElementsByClassName("close")[0];
-      const form = document.getElementById('quote-form');
-
-      // ...
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-
-        console.log('Sending data:', data); // Debugging: Check data being sent
-
-        emailjs.send('service_0519que', 'template_xaev3xd', data) // Replace with actual service and template IDs
-          .then(function(response) {
-            console.log('Success:', response); // Debugging: Check success response
-            alert('Your quote request has been submitted successfully!');
-            form.reset();
-            modal.style.display = "none";
-          })
-          .catch(function(error) {
-            console.error('Error:', error); // Debugging: Check error response
-            alert('There was an error submitting your request. Please try again.');
-          });
-      });
-    });
-  };
-</script>
-
 </body>
 </html>
+
