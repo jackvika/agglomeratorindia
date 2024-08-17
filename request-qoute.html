@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote - Your Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #ffffff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e55b00;
+        }
+    </style>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init('wQSMY4GSDbOcHXUXM'); // Replace with your EmailJS user ID
+    </script>
+</head>
+<body>
+    <!-- The Modal -->
+    <div id="quoteModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Request a Quote</h1>
+            <form id="quote-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name:</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="model">Model Interested In:</label>
+                    <select id="model" name="model" required>
+                        <option value="">Select a model</option>
+                        <option value="PPM-40A">PPM-40A</option>
+                        <option value="PPM-50A">PPM-50A</option>
+                        <option value="PPM-75A">PPM-75A</option>
+                        <option value="PPM-100A">PPM-100A</option>
+                        <option value="PPM-200A">PPM-200A</option>
+                        <option value="PPM-300A">PPM-300A</option>
+                        <option value="PPM-400A">PPM-400A</option>
+                        <option value="PPM-500A">PPM-500A</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById("quoteModal");
+    const closeButton = document.getElementsByClassName("close")[0];
+    const form = document.getElementById('quote-form');
+
+    // Show the modal if 'showModal' is set to 'true' in URL
+    if (new URLSearchParams(window.location.search).get('showModal') === 'true') {
+        modal.style.display = "block";
+    }
+
+    // Close the modal when the 'x' button is clicked
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal if the user clicks outside the modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        console.log('Sending data:', data); // Debugging: Check data being sent
+
+        emailjs.send('service_0519que', 'template_xaev3xd', data) // Replace with actual service and template IDs
+            .then(function(response) {
+                console.log('Success:', response); // Debugging: Check success response
+                alert('Your quote request has been submitted successfully!');
+                form.reset();
+                modal.style.display = "none";
+            })
+            .catch(function(error) {
+                console.error('Error:', error); // Debugging: Check error response
+                alert('There was an error submitting your request. Please try again.');
+            });
+    });
+});
+
+    </script>
+</body>
+</html>
